@@ -1,14 +1,14 @@
 import re
 import random
 
-def getFucker(lower_bound=0.75, higher_bound=1.25, gauss_mean=1, gauss_std=0.15):
+def getFucker(min_scale=0.75, max_scale=1.25, gauss_mean=1, gauss_std=0.15):
     pat = re.compile('[0-9]+\.[0-9][0-9][0-9]')
     
     def fuckLine(line):
         found = re.findall(pat, line)
         
         for num in found:
-            new_num = float(num) * (max(0.75, min(1.25, random.gauss(1, 0.15))))
+            new_num = float(num) * (max(min_scale, min(max_scale, random.gauss(gauss_mean, gauss_std))))
             new_num = '%.3f' % new_num
             line = line.replace(num, new_num)
         
