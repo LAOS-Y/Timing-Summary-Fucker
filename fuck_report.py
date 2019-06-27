@@ -17,8 +17,8 @@ def getFucker(min_scale=0.75, max_scale=1.25, mean_scale=1, std_scale=0.15):
     
     return fuckLine
 
-parser = argparse.ArgumentParser()
-parser.add_argument("path", help="original timing report path")
+parser = argparse.ArgumentParser(description="Fuck up your Vivado timing summary")
+parser.add_argument("path", help="original timing summary path")
 parser.add_argument("-o", "--output", default=None, help="output path")
 
 parser.add_argument("-m", "--min-scale", type=float, default=0.75, help="min zoom scale")
