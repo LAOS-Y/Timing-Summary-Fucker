@@ -38,7 +38,7 @@ if args.output is not None:
     out_file = open(args.output, mode='w')
 
 for line in in_file:
-    line = fuck(line.strip())
+    line = fuck(line.rstrip())
     if args.output is not None:
         print(line, file=out_file)
         out_file.flush()
